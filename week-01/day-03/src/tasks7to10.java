@@ -36,7 +36,6 @@ public class tasks7to10 {
         System.out.println(age);
         System.out.println(height);
         System.out.println(isMarried);
-        System.out.println();
 
 
     }
