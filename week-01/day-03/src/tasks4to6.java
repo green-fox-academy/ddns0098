@@ -38,7 +38,7 @@ public class tasks4to6 {
         //
         // Print how many hours is spent with coding in a semester by an attendee,
         // if the attendee only codes on workdays.
-        System.out.println(17*7*6);
+        System.out.println(17*5*6);
         // Print the percentage of the coding hours in the semester if the average
         // work hours weekly is 52
         double kodora = 17*7*6;

@@ -38,6 +38,6 @@ public class tasks7to10 {
         System.out.println(isMarried);
         System.out.println();
 
-        
+
     }
 }
