@@ -12,6 +12,12 @@ public class projectexercises {
         System.out.println("Is it an anagram???");
         System.out.println(isAnagram(s1,s2));
 
+        System.out.println();
+        System.out.println("####Palindrome####");
+        System.out.println("Enter a word:");
+        String normalWord = scanner.nextLine();
+        System.out.println(palindrome(normalWord));
+
 
     }
 
@@ -45,5 +51,14 @@ public class projectexercises {
       }else{
             return false;
       }
+    }
+
+    public static String palindrome(String input){
+        String word = input;
+
+        for (int i = (input.length()-1); i >= 0; i--) {
+            word+= input.charAt(i);
+        }
+        return word;
     }
 }
