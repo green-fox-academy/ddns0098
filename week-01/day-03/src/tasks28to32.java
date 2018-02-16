@@ -136,5 +136,79 @@ public class tasks28to32 {
             System.out.println();
         }
 
-    }
+
+        // Write a program that reads a number from the standard input, then draws a
+        // square like this:
+        //
+        //
+        // %%%%%
+        // %   %
+        // %   %
+        // %   %
+        // %   %
+        // %%%%%
+        //
+        // The square should have as many lines as the number was
+
+
+        System.out.println("Enter a number: ");
+        int d = scanner.nextInt();
+
+        i = 0;
+            for (int j = 0; j < d; j++) {
+                System.out.print("%");
+            }
+            System.out.print("\n");
+            for (int k = 0; k < d-2; k++) {
+                System.out.print("%");
+                for (int h = 0; h < d-2; h++) {
+                    System.out.print(" ");
+                }
+                System.out.print("%\n");
+            }
+            for (int j = 0; j < d; j++) {
+                System.out.print("%");
+            }
+            System.out.println();
+
+        System.out.println();
+        // Write a program that reads a number from the standard input, then draws a
+        // square like this:
+        //
+        //
+        // %%%%%
+        // %%  %
+        // % % %
+        // %  %%
+        // %%%%%
+        //
+        // The square should have as many lines as the number was
+
+        System.out.println("Enter a number: ");
+        int e = scanner.nextInt();
+
+        i = 0;
+        for (int j = 0; j < e; j++) {
+            System.out.print("%");
+        }
+        int diagonalPos=0;
+        System.out.print("\n");
+        for (int k = 0; k < e-2; k++) {
+            System.out.print("%");
+            for (int h = 0; h < e-2; h++) {
+                if(h==diagonalPos){
+                    System.out.print("%");
+                }else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("%\n");
+            diagonalPos++;
+        }
+        for (int j = 0; j < e; j++) {
+            System.out.print("%");
+        }
+        System.out.println();
+        }
 }
+
