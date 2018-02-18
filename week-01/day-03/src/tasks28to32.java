@@ -14,10 +14,10 @@ public class tasks28to32 {
         //
         // The triangle should have as many lines as the number was
         System.out.println("Enter a number: ");
-        int a = scanner.nextInt();
-        int i=1;
-        while(i<=a) {
-            for (int j=1; j <= i; j++) {
+        int number1 = scanner.nextInt();
+        int i=0;
+        while (i <= number1) {
+            for (int j=0; j < i; j++) {
                 System.out.print("*");
             }
             System.out.print("\n");
@@ -36,20 +36,20 @@ public class tasks28to32 {
         //
         // The pyramid should have as many lines as the number was
         System.out.println("Enter a number: ");
-        int b = scanner.nextInt();
+        int number2 = scanner.nextInt();
          i=0;
-        int starcount = 1;
-        int whitespace = b-1;
-        while(i<b) {
-            for(int j=0;j<whitespace;j++){
+        int starCount = 1;
+        int whiteSpace = number2 - 1;
+        while (i < number2) {
+            for (int j=0;j<whiteSpace;j++){
                 System.out.print(" ");
             }
-            for (int k = 0; k < starcount ; k++) {
+            for (int k = 0; k < starCount ; k++) {
                 System.out.print("*");
             }
             System.out.print("\n");
-            starcount+=2;
-            whitespace--;
+            starCount+=2;
+            whiteSpace--;
             i++;
         }
         System.out.println();
@@ -69,68 +69,68 @@ public class tasks28to32 {
         // The diamond should have as many lines as the number was
 
         System.out.println("Enter a number: ");
-        int c = scanner.nextInt();
+        int number3 = scanner.nextInt();
 
-        if(c%2 ==0) {
+        if (number3 % 2 == 0) {
             i = 0;
-            starcount = 1;
-            whitespace = c/2 - 1;
-            while (i < c/2) {
-                for (int j = 0; j < whitespace; j++) {
+            starCount = 1;
+            whiteSpace = number3 / 2 - 1;
+            while (i < number3 / 2) {
+                for (int j = 0; j < whiteSpace; j++) {
                     System.out.print(" ");
                 }
-                for (int k = 0; k < starcount; k++) {
+                for (int k = 0; k < starCount; k++) {
                     System.out.print("*");
                 }
                 System.out.print("\n");
-                starcount += 2;
-                whitespace--;
+                starCount += 2;
+                whiteSpace--;
                 i++;
             }
-            whitespace++;
-            starcount-=2;
-            while (i < c){
-                for (int j = 0; j < whitespace; j++) {
+            whiteSpace++;
+            starCount-=2;
+            while (i < number3){
+                for (int j = 0; j < whiteSpace; j++) {
                     System.out.print(" ");
                 }
-                for (int k = 0; k < starcount; k++) {
+                for (int k = 0; k < starCount; k++) {
                     System.out.print("*");
                 }
                 System.out.print("\n");
-                starcount -= 2;
-                whitespace++;
+                starCount -= 2;
+                whiteSpace++;
                 i++;
             }
             System.out.println();
         }else{
             i = 0;
-            starcount = 1;
-            whitespace = c/2;
-            System.out.println(whitespace);
-            while (i < c/2 +1) {
-                for (int j = 0; j < whitespace; j++) {
+            starCount = 1;
+            whiteSpace = number3 / 2;
+            System.out.println(whiteSpace);
+            while (i < number3 / 2 + 1) {
+                for (int j = 0; j < whiteSpace; j++) {
                     System.out.print(" ");
                 }
-                for (int k = 0; k < starcount; k++) {
+                for (int k = 0; k < starCount; k++) {
                     System.out.print("*");
                 }
                 System.out.print("\n");
-                starcount += 2;
-                whitespace--;
+                starCount += 2;
+                whiteSpace--;
                 i++;
             }
-            whitespace+=2;
-            starcount-=4;
-            while (i < c){
-                for (int j = 0; j < whitespace; j++) {
+            whiteSpace+=2;
+            starCount-=4;
+            while (i < number3){
+                for (int j = 0; j < whiteSpace; j++) {
                     System.out.print(" ");
                 }
-                for (int k = 0; k < starcount; k++) {
+                for (int k = 0; k < starCount; k++) {
                     System.out.print("*");
                 }
                 System.out.print("\n");
-                starcount -= 2;
-                whitespace++;
+                starCount -= 2;
+                whiteSpace++;
                 i++;
             }
             System.out.println();
@@ -152,21 +152,21 @@ public class tasks28to32 {
 
 
         System.out.println("Enter a number: ");
-        int d = scanner.nextInt();
+        int number4 = scanner.nextInt();
 
         i = 0;
-            for (int j = 0; j < d; j++) {
+            for (int j = 0; j < number4; j++) {
                 System.out.print("%");
             }
             System.out.print("\n");
-            for (int k = 0; k < d-2; k++) {
+            for (int k = 0; k < number4 - 2; k++) {
                 System.out.print("%");
-                for (int h = 0; h < d-2; h++) {
+                for (int h = 0; h < number4 - 2; h++) {
                     System.out.print(" ");
                 }
                 System.out.print("%\n");
             }
-            for (int j = 0; j < d; j++) {
+            for (int j = 0; j < number4; j++) {
                 System.out.print("%");
             }
             System.out.println();
@@ -185,18 +185,18 @@ public class tasks28to32 {
         // The square should have as many lines as the number was
 
         System.out.println("Enter a number: ");
-        int e = scanner.nextInt();
+        int number5 = scanner.nextInt();
 
         i = 0;
-        for (int j = 0; j < e; j++) {
+        for (int j = 0; j < number5; j++) {
             System.out.print("%");
         }
         int diagonalPos=0;
         System.out.print("\n");
-        for (int k = 0; k < e-2; k++) {
+        for (int k = 0; k < number5 - 2; k++) {
             System.out.print("%");
-            for (int h = 0; h < e-2; h++) {
-                if(h==diagonalPos){
+            for (int h = 0; h < number5 - 2; h++) {
+                if (h == diagonalPos){
                     System.out.print("%");
                 }else {
                     System.out.print(" ");
@@ -205,7 +205,7 @@ public class tasks28to32 {
             System.out.print("%\n");
             diagonalPos++;
         }
-        for (int j = 0; j < e; j++) {
+        for (int j = 0; j < number5; j++) {
             System.out.print("%");
         }
         System.out.println();
