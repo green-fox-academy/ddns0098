@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Summit {
+public class Summing {
     public static void main (String[] args){
         //  Create the usual class wrapper
 //  and main method on your own.
