@@ -12,9 +12,9 @@ public class StarryNight {
         //  - The stars can be small squares
         //  - The stars should have random positions on the canvas
         //  - The stars should have random color (some shade of grey)
-        graphics.setColor(Color.black);
-        graphics.fillRect(0,0,WIDTH,HEIGHT);
-        int size = 5;
+//        graphics.setColor(Color.black);
+//        graphics.fillRect(0,0,WIDTH,HEIGHT);
+        int size = 3;
         Random rand = new Random();
 
         for (int i = 0; i < 500; i++) {
@@ -45,6 +45,7 @@ public class StarryNight {
         @Override
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
+            this.setBackground(Color.black);
             mainDraw(graphics);
         }
     }
