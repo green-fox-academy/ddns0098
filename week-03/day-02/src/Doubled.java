@@ -27,9 +27,8 @@ public class Doubled {
           continue;
         } else {
           char[] chars = line.toCharArray();
-          decodedLine += chars[0];
-          for (int i = 1; i < chars.length; i++) {
-            if (chars[i] != chars[i - 1]) {
+          for (int i = 0; i < chars.length; i++) {
+            if (i % 2 != 0) {
               decodedLine += chars[i];
             }
           }
