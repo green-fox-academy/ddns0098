@@ -10,7 +10,7 @@ public class CountLines {
     // then returns the number of lines the file contains.
     // It should return zero if it can't open the file, and
     // should not raise any error.
-    String path = "readme.txt";
+    String path = "my-file.txt";
     System.out.println(countLines(path));
   }
 
