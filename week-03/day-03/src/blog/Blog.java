@@ -11,7 +11,7 @@ public class Blog {
   }
 
   public static void update(int i, BlogPost post) {
-    posts.add(i, post);
+    posts.set(i, post);
   }
 
 
