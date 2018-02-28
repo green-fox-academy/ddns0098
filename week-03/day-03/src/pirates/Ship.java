@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class Ship {
 
-  public List<Pirate> crew = new ArrayList<>();
+  private List<Pirate> crew = new ArrayList<>();
 
-  Random rand = new Random();
+  private Random rand = new Random();
 
   public void fillShip() {
     for (int i = 0; i < rand.nextInt(10+1); i++) {
@@ -19,7 +19,7 @@ public class Ship {
     }
   }
 
-  public int shipInfo() {
+  public void shipInfo() {
     int counter = 0;
     for (int i = 0; i < crew.size(); i++) {
       System.out.print(i+1 + ". ");
@@ -34,20 +34,31 @@ public class Ship {
       }
     }
     System.out.println(", Number of alive pirates: " + counter);
-    return counter;
   }
 
   public boolean battle(Ship enemyShip) {
     int score = 0;
     int enemyScore = 0;
 
+    int counter = 0;
     for (int i = 0; i < crew.size(); i++) {
-      score += shipInfo();
-      score -= crew.get(0).getDrank();
-
-      enemyScore += enemyShip.shipInfo();
-      enemyScore -= enemyShip.crew.get(0).getDrank();
+      String currentState = crew.get(i).getState();
+      if (currentState.equals("Alive!")) {
+        counter++;
+      }
     }
+    score += counter;
+    score -= crew.get(0).getDrank();
+
+    int enemyCounter = 0;
+    for (int i = 0; i < enemyShip.crew.size(); i++) {
+      String currentState = crew.get(i).getState();
+      if (currentState.equals("Alive!")) {
+        enemyCounter++;
+      }
+    }
+    enemyScore += enemyCounter;
+    enemyScore -= enemyShip.crew.get(0).getDrank();
 
     if (score > enemyScore) {
       for (int i = 0; i < rand.nextInt(enemyShip.crew.size()) + 1; i++) {
