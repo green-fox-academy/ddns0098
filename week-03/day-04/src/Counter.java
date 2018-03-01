@@ -4,15 +4,15 @@ public class Counter {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int n = scanner.nextInt();
-    System.out.println(countDown(n));
+    countDown(n);
   }
 
-  private static int countDown(int n) {
+  private static void countDown(int n) {
     if (n == 0) {
-      return 0;
+      System.out.println(0);
     } else {
       System.out.println(n);
-      return countDown(n-1);
+      countDown(n-1);
     }
   }
 
