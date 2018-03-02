@@ -7,6 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Carpet {
 
   static int ITERATOR = 0;
+
   private static void mainDraw(Graphics graphics) {
     // https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/recursion/drawing/graphic.png
 
@@ -21,53 +22,39 @@ public class Carpet {
   }
 
   private static void magicMethod(Graphics graphics, int n, int size, int x, int y, int iterator) {
+    graphics.setColor(getRandomColor());
+
     if (n > 6) {
 
     } else if (iterator < ITERATOR) {
+      Random random = new Random();
       //Middle
-      graphics.setColor(getRandomColor());
       graphics.fillRect(x, y,size, size);
-      //magicMethod(graphics, n+1, size/3, x, y);
+      magicMethod(graphics, n+1, size/3, x+size/3, y+size/3, iterator+random.nextInt(20)+1);
 
       //Top
-      graphics.fillRect(x+size/3, y-size+size/3,size/3, size/3);
-      graphics.setColor(getRandomColor());
-      magicMethod(graphics, n+1, size/3, x+size/3, y-size+size/3, iterator+10);
+      magicMethod(graphics, n+1, size/3, x+size/3, y-size+size/3, iterator+random.nextInt(20)+1);
 
       //Bottom
-      graphics.fillRect(x + size/3, y+size+size/3,size/3, size/3);
-      graphics.setColor(getRandomColor());
-      magicMethod(graphics, n+1, size/3, x+size/3, y+size+size/3, iterator+10);
+      magicMethod(graphics, n+1, size/3, x+size/3, y+size+size/3, iterator+random.nextInt(20)+1);
 
       //Left
-      graphics.fillRect(x-size+size/3, y+size/3,size/3, size/3);
-      graphics.setColor(getRandomColor());
-      magicMethod(graphics, n+1, size/3, x-size+size/3, y+size/3, iterator+10);
+      magicMethod(graphics, n+1, size/3, x-size+size/3, y+size/3, iterator+random.nextInt(20)+1);
 
       //Right
-      graphics.fillRect(x+size+size-(size/3) * 2, y+size/3,size/3, size/3);
-      graphics.setColor(getRandomColor());
-      magicMethod(graphics, n+1, size/3, x+size+size - (size/3) * 2, y+size/3, iterator+10);
+      magicMethod(graphics, n+1, size/3, x+size+size - (size/3) * 2, y+size/3, iterator+random.nextInt(20)+1);
 
       //Top-right corner
-      graphics.fillRect(x+size+(size/3), y-size+size/3,size/3, size/3);
-      graphics.setColor(getRandomColor());
-      magicMethod(graphics, n+1, size/3, x+size+(size/3), y-size+size/3, iterator+10);
+      magicMethod(graphics, n+1, size/3, x+size+(size/3), y-size+size/3, iterator+random.nextInt(20)+1);
 
       //Top-left corner
-      graphics.fillRect(x-size+size/3, y-size+size/3,size/3, size/3);
-      graphics.setColor(getRandomColor());
-      magicMethod(graphics, n+1, size/3, x-size+size/3, y-size+size/3, iterator+10);
+      magicMethod(graphics, n+1, size/3, x-size+size/3, y-size+size/3, iterator+random.nextInt(20)+1);
 
       //Bottom-left corner
-      graphics.fillRect(x-size+size/3, y+size*2-(size/3) * 2,size/3, size/3);
-      graphics.setColor(getRandomColor());
-      magicMethod(graphics, n+1, size/3, x-size+size/3, y+size*2-(size/3) * 2, iterator+10);
+      magicMethod(graphics, n+1, size/3, x-size+size/3, y+size*2-(size/3) * 2, iterator+random.nextInt(20)+1);
 
       //Bottom-right corner
-      graphics.fillRect(x+size*2-(size/3) * 2, y+size*2-(size/3) * 2,size/3, size/3);
-      graphics.setColor(getRandomColor());
-      magicMethod(graphics, n+1, size/3, x+size*2-(size/3) * 2, y+size*2-(size/3) * 2, iterator+10);
+      magicMethod(graphics, n+1, size/3, x+size*2-(size/3) * 2, y+size*2-(size/3) * 2, iterator+random.nextInt(20)+1);
     }
   }
 
@@ -87,7 +74,7 @@ public class Carpet {
     while(true) {
       imagePanel.repaint();
       ITERATOR ++;
-      Thread.sleep(100);
+      Thread.sleep(300);
     }
   }
 
