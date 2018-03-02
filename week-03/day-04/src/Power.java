@@ -13,7 +13,7 @@ public class Power {
     if (power == 0) {
       return 1;
     } else {
-      return n * powerN(n, --power);
+      return n * powerN(n, power - 1);
     }
   }
 }
