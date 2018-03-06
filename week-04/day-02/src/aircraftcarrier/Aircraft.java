@@ -16,6 +16,22 @@ public class Aircraft {
     return type;
   }
 
+  public int getMaxAmmo() {
+    return maxAmmo;
+  }
+
+  public int getBaseDamage() {
+    return baseDamage;
+  }
+
+  public int getAmmoStore() {
+    return ammoStore;
+  }
+
+  public void setAmmoStore(int ammoStore) {
+    this.ammoStore = ammoStore;
+  }
+
   public int fight() {
     int damage = ammoStore * baseDamage;
     ammoStore = 0;
