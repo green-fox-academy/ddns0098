@@ -17,8 +17,7 @@ public class Student extends Person implements Cloneable{
 
   @Override
   public Student clone() {
-    Student newStudent = this;
-    return newStudent;
+    return this;
   }
 
   public void getGoal() {
