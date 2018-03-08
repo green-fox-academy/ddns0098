@@ -25,7 +25,7 @@ public class Extension {
 
   int median(List<Integer> pool) {
     if (pool.size()%2 == 0) {
-      return (pool.get(pool.size()/2) + pool.get(pool.size()/2 + 1)) / 2;
+      return (pool.get(pool.size()/2) + pool.get(pool.size()/2 - 1)) / 2;
     }
     return pool.get(pool.size()/2);
   }
