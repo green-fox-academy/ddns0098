@@ -7,12 +7,9 @@ public class Exercise7 {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     String str = scanner.nextLine();
-    List<Character> chars = new ArrayList<>();
-    for (int i = 0; i < str.length(); i++) {
-      chars.add(str.charAt(i));
-    }
-    System.out.println(chars
-            .stream()
+    System.out.println(str
+            .chars()
+            .mapToObj(c -> (char) c)
             .collect(Collectors.groupingBy(c -> c, Collectors.counting())));
   }
 }
