@@ -6,8 +6,17 @@
     <meta charset="utf-8" />
 </head>
 <body>
-    <div th:each="account : ${accounts}">
-        <p th:text="'Name: ' + ${account.name} + ' Balance: ' + ${account.balance} + ' Animal type: ' + ${account.animalType}"/>
-    </div>
+    <table>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>AnimalType</th>
+    </tr>
+    <tr th:each="account : ${accounts}">
+        <td th:text="${account.name}"></td>
+        <td th:text="${account.balance}"></td>
+        <td th:text="${account.animalType}"></td>
+    </tr>
+    </table>
 </body>
 </html>
