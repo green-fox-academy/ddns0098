@@ -31,7 +31,7 @@ public class AccountController {
   }
 
   private void fillAccounts() {
-    accounts.add(new BankAccount("Simba", "2000", "lion"));
+    accounts.add(new BankAccount("Simba", "2000", "lion", true));
     accounts.add(new BankAccount("Zordon", "500", "lion"));
     accounts.add(new BankAccount("Rafiki", "1000", "monkey"));
     accounts.add(new BankAccount("Zazu", "200", "bird"));

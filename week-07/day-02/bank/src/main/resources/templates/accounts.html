@@ -13,7 +13,7 @@
         <th>Balance</th>
         <th>AnimalType</th>
     </tr>
-    <tr th:each="account, iterStat : ${accounts}">
+    <tr th:each="account, iterStat : ${accounts}" th:style="${account.isKing()}? 'color: #cdad00'">
         <td th:text="${iterStat.count}"></td>
         <td th:text="${account.name}"></td>
         <td th:text="${account.balance}"></td>
