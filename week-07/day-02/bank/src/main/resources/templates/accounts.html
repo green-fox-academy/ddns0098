@@ -8,11 +8,13 @@
 <body>
     <table>
     <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Balance</th>
         <th>AnimalType</th>
     </tr>
-    <tr th:each="account : ${accounts}">
+    <tr th:each="account, iterStat : ${accounts}">
+        <td th:text="${iterStat.count}"></td>
         <td th:text="${account.name}"></td>
         <td th:text="${account.balance}"></td>
         <td th:text="${account.animalType}"></td>
