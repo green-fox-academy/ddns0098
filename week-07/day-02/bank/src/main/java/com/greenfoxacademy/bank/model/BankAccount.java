@@ -2,10 +2,10 @@ package com.greenfoxacademy.bank.model;
 
 public class BankAccount {
   private String name;
-  private double balance;
+  private String balance;
   private String animalType;
 
-  public BankAccount(String name, double balance, String animalType) {
+  public BankAccount(String name, String balance, String animalType) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
@@ -22,11 +22,11 @@ public class BankAccount {
     this.name = name;
   }
 
-  public double getBalance() {
+  public String getBalance() {
     return balance;
   }
 
-  public void setBalance(double balance) {
+  public void setBalance(String balance) {
     this.balance = balance;
   }
 

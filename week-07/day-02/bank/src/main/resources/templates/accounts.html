@@ -6,6 +6,8 @@
     <meta charset="utf-8" />
 </head>
 <body>
-    <p th:text="'Name: ' + ${name} + ' Balance: ' + ${balance} + ' Animal type: ' + ${animal}"/>
+    <div th:each="account : ${accounts}">
+        <p th:text="'Name: ' + ${account.name} + ' Balance: ' + ${account.balance} + ' Animal type: ' + ${account.animalType}"/>
+    </div>
 </body>
 </html>
