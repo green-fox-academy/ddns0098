@@ -6,34 +6,36 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<div class="grid-container">
-    <div class="grid-item, item1"></div>
-    <div class="grid-item, item2">
-        <h1>Bank Accounts</h1>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Balance</th>
-                <th>AnimalType</th>
-                <th>IsKing</th>
-                <th>IsBad</th>
-                <th></th>
-            </tr>
-            <tr th:each="account, iterStat : ${accounts}" th:style="${account.isKing()}? 'color: #cdad00'" th:bgcolor="${iterStat.even}? cornflowerblue : royalblue">
-                <td th:text="${iterStat.count}"></td>
-                <td th:text="${account.name}"></td>
-                <td th:text="${account.balance}"></td>
-                <td th:text="${account.animalType}"></td>
-                <td th:text="${account.isKing()}? 'KING'"></td>
-                <td th:text="${account.isBad()}? 'Bad Guy!' : 'Good One!'"></td>
-                <td>
-                    <button name="raise" type="submit" th:text="${account.raise()}">Raise</button>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="grid-item, item3"></divclass>
-</div>
+<form action="#" th:action="@{/showaccounts}" method="get">
+    <div class="grid-container">
+        <div class="grid-item, item1"></div>
+        <div class="grid-item, item2">
+            <h1>Bank Accounts</h1>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Balance</th>
+                    <th>AnimalType</th>
+                    <th>IsKing</th>
+                    <th>IsBad</th>
+                    <th>Raise</th>
+                </tr>
+                <tr th:each="account, iterStat : ${accounts}" th:style="${account.isKing()}? 'color: #cdad00'" th:bgcolor="${iterStat.even}? cornflowerblue : royalblue">
+                    <td th:text="${iterStat.count}" th:action="${account.setIndex(iterStat.index)}"></td>
+                    <td th:text="${account.name}"></td>
+                    <td th:text="${account.balance}"></td>
+                    <td th:text="${account.animalType}"></td>
+                    <td th:text="${account.isKing()}? 'KING'"></td>
+                    <td th:text="${account.isBad()}? 'Bad Guy!' : 'Good One!'"></td>
+                    <td>
+                        <button name="raise" type="submit" th:value="${account.getIndex()}">Raise</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="grid-item, item3"></div>
+        </div>
+    </form>
 </body>
 </html>

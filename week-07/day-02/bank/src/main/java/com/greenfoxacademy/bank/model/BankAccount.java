@@ -7,6 +7,7 @@ public class BankAccount {
   private boolean isKing;
   private boolean isBad;
   private String currency = "Zebra";
+  private int index;
 
   public BankAccount(String name, String balance, String animalType, boolean isKing, boolean isBad) {
     this.name = name;
@@ -17,6 +18,14 @@ public class BankAccount {
   }
 
   public BankAccount() {
+  }
+
+  public int getIndex() {
+    return index;
+  }
+
+  public void setIndex(int index) {
+    this.index = index;
   }
 
   public boolean isBad() {
@@ -39,11 +48,17 @@ public class BankAccount {
     return animalType;
   }
 
-  public void raise() {
-    if (isKing) {
-      balance = String.valueOf(Double.valueOf(balance.split(" ")[0]) + 100);
-    } else {
-      balance = String.valueOf(Double.valueOf(balance.split(" ")[0]) + 10);
+  public void setBalance(String balance) {
+    this.balance = balance;
+  }
+
+  public void raise(int index) {
+    if (this.index == index) {
+      if (isKing()) {
+        balance = String.valueOf(Double.valueOf(balance.split(" ")[0]) + 100) + "0 " + currency;
+      } else {
+        balance = String.valueOf(Double.valueOf(balance.split(" ")[0]) + 10) + "0 " + currency;
+      }
     }
   }
 }

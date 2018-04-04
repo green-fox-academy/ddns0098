@@ -4,6 +4,9 @@ import com.greenfoxacademy.bank.model.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,6 +32,13 @@ public class AccountController {
   public String showAccounts(Model model) {
     model.addAttribute("accounts", accounts);
     return "accounts";
+  }
+
+  @GetMapping(value = "/showaccounts", params = "raise")
+  public String raise(HttpServletRequest request) {
+    Integer index = Integer.valueOf(request.getParameter("raise"));
+    accounts.get(index).raise(index);
+    return "redirect:showaccounts";
   }
 
   private void getAccountDetailsAndPassThem(Model model, BankAccount account) {
