@@ -21,10 +21,7 @@
         <td th:text="${account.balance}"></td>
         <td th:text="${account.animalType}"></td>
         <td th:text="${account.isKing()}? 'KING'"></td>
-        <div th:switch="${account.isBad()}">
-            <td th:case="true">Bad Guy!</td>
-            <td th:case="false">Good One!</td>
-        </div>
+        <td th:text="${account.isBad()}? 'Bad Guy!' : 'Good One!'"></td>
     </tr>
     </table>
 </body>
