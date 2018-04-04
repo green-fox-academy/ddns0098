@@ -17,7 +17,7 @@ public class AccountController {
 
   @GetMapping("/show")
   public String showAccount(Model model) {
-    BankAccount account = new  BankAccount("Simba", "2000", "lion");
+    BankAccount account = new  BankAccount("Simba", "2000", "lion", true, true);
     formatBalance(account);
     getAccountDetailsAndPassThem(model, account);
     return "show";
@@ -31,10 +31,10 @@ public class AccountController {
   }
 
   private void fillAccounts() {
-    accounts.add(new BankAccount("Simba", "2000", "lion", true));
-    accounts.add(new BankAccount("Zordon", "500", "lion"));
-    accounts.add(new BankAccount("Rafiki", "1000", "monkey"));
-    accounts.add(new BankAccount("Zazu", "200", "bird"));
+    accounts.add(new BankAccount("Simba", "2000", "lion", true, false));
+    accounts.add(new BankAccount("Zordon", "500", "lion", false, true));
+    accounts.add(new BankAccount("Rafiki", "1000", "monkey", false, false));
+    accounts.add(new BankAccount("Zazu", "200", "bird", false, false));
 
     for (int i = 0; i < accounts.size(); i++) {
       formatBalance(accounts.get(i));

@@ -12,12 +12,19 @@
         <th>Name</th>
         <th>Balance</th>
         <th>AnimalType</th>
+        <th>IsKing</th>
+        <th>IsBad</th>
     </tr>
     <tr th:each="account, iterStat : ${accounts}" th:style="${account.isKing()}? 'color: #cdad00'">
         <td th:text="${iterStat.count}"></td>
         <td th:text="${account.name}"></td>
         <td th:text="${account.balance}"></td>
         <td th:text="${account.animalType}"></td>
+        <td th:text="${account.isKing()}? 'KING'"></td>
+        <div th:switch="${account.isBad()}">
+            <td th:case="true">Bad Guy!</td>
+            <td th:case="false">Good One!</td>
+        </div>
     </tr>
     </table>
 </body>
