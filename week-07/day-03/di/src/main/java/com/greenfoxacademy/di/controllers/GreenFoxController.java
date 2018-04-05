@@ -13,7 +13,8 @@ public class GreenFoxController {
   StudentService studentService;
 
   @RequestMapping("/gfa")
-  public String greenFoxMain() {
+  public String greenFoxMain(Model model) {
+    model.addAttribute("count", studentService.count());
     return "gfa";
   }
 
@@ -32,5 +33,17 @@ public class GreenFoxController {
   public String saveStudent(@ModelAttribute(name = "name") String name) {
     studentService.save(name);
     return "redirect:/gfa";
+  }
+
+  @RequestMapping("/gfa/check")
+  public String checkStudent() {
+    return "check";
+  }
+
+  @RequestMapping("/gfa/checked")
+  public String checkStudent(Model model, @ModelAttribute(name = "name") String name) {
+    model.addAttribute("isInList", studentService.isInList(name));
+    model.addAttribute("name", name);
+    return "checked";
   }
 }

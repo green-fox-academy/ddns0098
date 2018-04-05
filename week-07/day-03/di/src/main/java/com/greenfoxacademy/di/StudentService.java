@@ -23,4 +23,17 @@ public class StudentService {
   public void save(String student) {
     names.add(student);
   }
+
+  public int count() {
+    return names.size();
+  }
+
+  public boolean isInList(String name) {
+    for (int i = 0; i < names.size(); i++) {
+      if (names.get(i).equals(name)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

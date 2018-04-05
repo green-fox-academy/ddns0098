@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CheckStudent</title>
+</head>
+<body>
+    <p th:text="${isInList} ? ${name} + ' is already in the list!' : ${name} + ' is not in the list!'"/>
+</body>
+</html>
