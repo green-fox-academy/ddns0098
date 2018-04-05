@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 @Component
 public class Printer {
-  public String log(String message) {
-    return LocalDateTime.now() + " MY PRINTER SAYS --- " + message;
+  public void log(String message) {
+    System.out.println(LocalDateTime.now() + " MY PRINTER SAYS --- " + message);
   }
 }

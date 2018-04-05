@@ -18,7 +18,7 @@ public class DiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-      System.out.println(printer.log("hello"));
-      System.out.println(myColor.printColor());
+      printer.log("hello");
+      myColor.printColor();
     }
 }
