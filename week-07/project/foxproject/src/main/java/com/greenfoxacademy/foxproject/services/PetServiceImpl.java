@@ -19,10 +19,22 @@ public class PetServiceImpl implements PetService {
   @Override
   public Pet login(String name) {
     if (!name.equals("")) {
-      petRepository.addPet(name);
       Pet pet = petRepository.findOne(name);
+      if (pet == null) {
+        petRepository.addPet(name);
+        pet = petRepository.findOne(name);
+        return pet;
+      }
       return pet;
     }
     return null;
+  }
+
+  public Pet findOne(String name) {
+    return petRepository.findOne(name);
+  }
+
+  public boolean checkLogged(Pet pet) {
+    return Util.loggedInPet == pet;
   }
 }

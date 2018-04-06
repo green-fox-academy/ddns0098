@@ -20,10 +20,11 @@ public class MainController {
 
   @GetMapping("/")
   public String mainPage(Model model, @RequestParam(name = "name", required = false) String name) {
-    if (Util.loggedInPet == null || !name.equals(Util.loggedInPet.getName())) {
+    if (Util.loggedInPet == null || petService.findOne(name) == null) {
       return "redirect:/login";
     } else {
-      model.addAttribute("pet", Util.loggedInPet);
+      model.addAttribute("pet", petService.findOne(name));
+      model.addAttribute("checklog", petService.checkLogged(petService.findOne(name)));
       return "index";
     }
   }

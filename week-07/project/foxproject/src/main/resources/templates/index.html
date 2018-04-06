@@ -3,13 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Club</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">PetClub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/nutritionStore}">Nutrition Store</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Trick Center</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
     <h1>Welcome to the club!</h1>
     <p th:text="'This is ' + ${pet.name} + '. Currently living on ' + ${pet.food} + ' and ' + ${pet.drink}
      + '. He knows ' + ${pet.countTricks()} + ' tricks.' "/>
-    <form action="#" th:action="@{/login}">
-        <button type="submit">Logout</button>
+    <form action="#" th:action="@{/}">
+        <button type="submit" th:text="${checklog}? 'Logout' : 'Back'"/>
     </form>
 </body>
 </html>

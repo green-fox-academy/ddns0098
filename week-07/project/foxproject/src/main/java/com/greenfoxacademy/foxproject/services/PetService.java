@@ -8,4 +8,8 @@ public interface PetService {
 
   Pet login(String name);
 
+  Pet findOne(String name);
+
+  boolean checkLogged(Pet pet);
+
 }
