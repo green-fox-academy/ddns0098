@@ -30,7 +30,7 @@ public class LoginController {
     Pet pet = petService.login(petname);
     if (pet != null) {
       Util.loggedInPet = pet;
-      return "redirect:/";
+      return "redirect:/?name=" + petname;
     } else {
       return "redirect:/login";
     }

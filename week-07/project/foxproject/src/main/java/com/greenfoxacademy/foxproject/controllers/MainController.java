@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
@@ -18,8 +19,8 @@ public class MainController {
   }
 
   @GetMapping("/")
-  public String mainPage(Model model) {
-    if (Util.loggedInPet == null) {
+  public String mainPage(Model model, @RequestParam(name = "name", required = false) String name) {
+    if (Util.loggedInPet == null || !name.equals(Util.loggedInPet.getName())) {
       return "redirect:/login";
     } else {
       model.addAttribute("pet", Util.loggedInPet);
