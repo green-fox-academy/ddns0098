@@ -17,13 +17,13 @@ public class PokerTest {
             new Card("2", "H"),
             new Card("5", "D"),
             new Card("5", "S"),
-            new Card("9", "C"),
+            new Card("K", "C"),
             new Card("K", "D")
     ));
 
     List<Card> deckTwo = new ArrayList<>(Arrays.asList(
             new Card("2", "C"),
-            new Card("3", "H"),
+            new Card("4", "H"),
             new Card("4", "S"),
             new Card("A", "C"),
             new Card("A", "H")
@@ -35,7 +35,7 @@ public class PokerTest {
 
     //Assert
     assertEquals(deckTwo.get(4), resultOfHighCard);
-    assertEquals("A", resultOfPairs);
+    assertEquals("5K", resultOfPairs);
   }
 
 }

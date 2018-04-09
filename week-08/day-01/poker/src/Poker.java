@@ -39,12 +39,34 @@ public class Poker {
             .map(Map.Entry::getKey)
             .collect(Collectors.toList());
 
+    if (deckOnePairs.size() > deckTwoPairs.size()) {
+      return getTwoPairsBlackResult(deckOnePairs);
+    } else if (deckOnePairs.size() < deckTwoPairs.size()) {
+      return getTwoPairsWhiteResult(deckTwoPairs);
+    } else if (deckOnePairs.size() == 2) {
+      if (((int)deckOnePairs.get(0) + (int)deckOnePairs.get(1)) > ((int)deckTwoPairs.get(0) + (int)deckTwoPairs.get(1))) {
+        return getTwoPairsBlackResult(deckOnePairs);
+      }
+      return getTwoPairsWhiteResult(deckTwoPairs);
+    }
     if ((int)deckOnePairs.get(0) > (int)deckTwoPairs.get(0)) {
       String resultBlack = convertValueToString((int)deckOnePairs.get(0));
       System.out.println("Black wins! - (Pair: " + resultBlack + ")");
       return resultBlack;
     }
     String resultWhite = convertValueToString((int)deckTwoPairs.get(0));
+    System.out.println("White wins! - (Pair: " + resultWhite + ")");
+    return resultWhite;
+  }
+
+  private String getTwoPairsBlackResult(List deckOnePairs) {
+    String resultBlack = convertValueToString((int)deckOnePairs.get(0)) + convertValueToString((int)deckOnePairs.get(1));
+    System.out.println("Black wins! - (Pair: " + resultBlack + ")");
+    return resultBlack;
+  }
+
+  private String getTwoPairsWhiteResult(List deckTwoPairs) {
+    String resultWhite = convertValueToString((int) deckTwoPairs.get(0)) + convertValueToString((int)deckTwoPairs.get(1));
     System.out.println("White wins! - (Pair: " + resultWhite + ")");
     return resultWhite;
   }
