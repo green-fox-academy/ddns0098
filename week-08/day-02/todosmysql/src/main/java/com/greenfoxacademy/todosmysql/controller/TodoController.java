@@ -41,4 +41,10 @@ public class TodoController {
     return "redirect:/todo/";
   }
 
+  @RequestMapping("/{id}/delete")
+  public String  delete(@PathVariable long id) {
+    todoRepository.deleteById(id);
+    return "redirect:/todo/";
+  }
+
 }
