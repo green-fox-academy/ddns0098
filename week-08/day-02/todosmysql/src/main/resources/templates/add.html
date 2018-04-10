@@ -7,7 +7,7 @@
 <body>
 <form action="#" th:action="@{/todo/add}" method="post">
     <label for="title">Todo:</label>
-    <input type="text" id="title" name="title"/>
+    <input type="text" id="title" name="title" th:required="required"/>
     <input type="submit" value="add">
 </form>
 </body>
