@@ -1,4 +1,4 @@
-package com.greenfoxacademy.todos;
+package com.greenfoxacademy.todos.model;
 
 public class Todo {
   private long id;
