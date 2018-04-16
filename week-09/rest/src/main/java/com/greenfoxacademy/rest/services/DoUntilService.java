@@ -6,8 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class DoUntilService {
 
-    public DoUntil sum(Integer number) {
-        DoUntil doUntil = new DoUntil(number);
+    public DoUntil sum(DoUntil doUntil) {
         doUntil.setResult(0);
         for (int i = 0; i < doUntil.getUntil(); i++) {
             doUntil.setResult(doUntil.getResult() + i + 1);
@@ -15,8 +14,7 @@ public class DoUntilService {
         return doUntil;
     }
 
-    public DoUntil factor(Integer number) {
-        DoUntil doUntil = new DoUntil(number);
+    public DoUntil factor(DoUntil doUntil) {
         doUntil.setResult(1);
         for (int i = 0; i < doUntil.getUntil(); i++) {
             doUntil.setResult(doUntil.getResult() * (i+1));
