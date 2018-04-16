@@ -12,7 +12,6 @@ public class DoUntilService {
         for (int i = 0; i < doUntil.getUntil(); i++) {
             doUntil.setResult(doUntil.getResult() + i + 1);
         }
-        System.out.println(doUntil.getResult());
         return doUntil;
     }
 
@@ -22,7 +21,6 @@ public class DoUntilService {
         for (int i = 0; i < doUntil.getUntil(); i++) {
             doUntil.setResult(doUntil.getResult() * (i+1));
         }
-        System.out.println(doUntil.getResult());
         return doUntil;
     }
 }

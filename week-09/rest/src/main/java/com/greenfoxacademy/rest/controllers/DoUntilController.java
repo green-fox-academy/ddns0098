@@ -16,10 +16,8 @@ public class DoUntilController {
         if (until == null) {
             return new DoUntil();
         } else if (what.equals("sum")) {
-            System.out.println("sum");
             return doUntilService.sum(until.getUntil());
         } else if (what.equals("factor")) {
-            System.out.println("factor");
             return doUntilService.factor(until.getUntil());
         }
         return null;
