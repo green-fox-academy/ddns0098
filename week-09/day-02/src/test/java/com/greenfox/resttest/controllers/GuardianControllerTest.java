@@ -44,6 +44,28 @@ public class GuardianControllerTest {
     @Test
     public void grootNoParam() throws Exception {
         mvc.perform(get("/groot"))
+                .andExpect(status().isNoContent())
                 .andExpect(content().json("{'error' : 'I am Groot!'}"));
+    }
+
+    @Test
+    public void yondu() throws Exception {
+        mvc.perform(get("/yondu?distance=100.0&time=10.0"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("{'distance' : 100.0, 'time' : 10.0, 'speed' : 10.0}"));
+    }
+
+    @Test
+    public void yonduNoTime() throws Exception {
+        mvc.perform(get("/yondu?distance=100.0"))
+                .andExpect(status().isNoContent())
+                .andExpect(content().json("{'error' : 'Please provide a time!'}"));
+    }
+
+    @Test
+    public void yonduNoParam() throws Exception {
+        mvc.perform(get("/yondu"))
+                .andExpect(status().isNoContent())
+                .andExpect(content().json("{'error' : 'Please provide a distance!'}"));
     }
 }
