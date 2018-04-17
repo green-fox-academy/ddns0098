@@ -47,6 +47,6 @@ public class GuardianController {
             return ResponseEntity.status(HttpStatus.OK).body("{'received' : '" + caliber + "', 'amount' : " + amount +
                     ", 'shipstatus' : '" + rocket.getShipstatus() + "', 'ready' : " + rocket.isReady() + "}");
         }
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("'error' : 'No parameters were given!'");
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("{'error' : 'No parameters were given!'}");
     }
 }

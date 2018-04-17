@@ -102,6 +102,6 @@ public class GuardianControllerTest {
     public void rocketNoParam() throws Exception {
         mvc.perform(get("/rocket/fill"))
                 .andExpect(status().isNoContent())
-                .andExpect(content().json("{'error' : 'No parameter were given!'}"));
+                .andExpect(content().json("{'error' : 'No parameters were given!'}"));
     }
 }
