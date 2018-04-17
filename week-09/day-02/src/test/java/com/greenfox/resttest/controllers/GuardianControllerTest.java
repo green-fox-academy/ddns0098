@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -67,5 +68,40 @@ public class GuardianControllerTest {
         mvc.perform(get("/yondu"))
                 .andExpect(status().isNoContent())
                 .andExpect(content().json("{'error' : 'Please provide a distance!'}"));
+    }
+
+    @Test
+    public void rocket() throws Exception {
+        mvc.perform(get("/rocket/fill?caliber=.50&amount=5000"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("{'received' : '.50','amount' : 5000,'shipstatus' : '40%','ready' : false}"));
+    }
+
+    @Test
+    public void rocketEmpty() throws Exception {
+        mvc.perform(get("/rocket/fill?caliber=.50&amount=0"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("{'received' : '.50','amount' : 0,'shipstatus' : 'empty','ready' : false}"));
+    }
+
+    @Test
+    public void rocketFull() throws Exception {
+        mvc.perform(get("/rocket/fill?caliber=.50&amount=12500"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("{'received' : '.50','amount' : 12500,'shipstatus' : 'full','ready' : true}"));
+    }
+
+    @Test
+    public void rocketOverloaded() throws Exception {
+        mvc.perform(get("/rocket/fill?caliber=.50&amount=50000"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("{'received' : '.50','amount' : 50000,'shipstatus' : 'overloaded','ready' : false}"));
+    }
+
+    @Test
+    public void rocketNoParam() throws Exception {
+        mvc.perform(get("/rocket/fill"))
+                .andExpect(status().isNoContent())
+                .andExpect(content().json("{'error' : 'No parameter were given!'}"));
     }
 }
